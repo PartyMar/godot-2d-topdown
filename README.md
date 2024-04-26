@@ -1,2 +1,3 @@
 # godot-2d-topdown
- Learn project
+A small game created as a test and learning experience with Godot.
+
