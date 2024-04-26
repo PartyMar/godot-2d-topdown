@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkoch5suolhw5"]
+
+[ext_resource type="Texture2D" uid="uid://ceyawa6gdm63l" path="res://Art/Objects/fruits.png" id="1_ayod7"]
+[ext_resource type="Script" path="res://Items/pepper.gd" id="2_2yban"]
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="2_p0m7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2faa"]
+size = Vector2(600, 400)
+
+[node name="Pepper" type="Sprite2D"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_ayod7")
+offset = Vector2(0, 800)
+hframes = 3
+vframes = 3
+frame = 4
+script = ExtResource("2_2yban")
+
+[node name="Item" parent="." instance=ExtResource("2_p0m7q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(0, 1000)
+shape = SubResource("RectangleShape2D_t2faa")

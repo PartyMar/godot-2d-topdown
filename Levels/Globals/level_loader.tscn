@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm0bfydeky2jm"]
+
+[ext_resource type="Script" path="res://Levels/Globals/LevelLoader.gd" id="1_tehwp"]
+
+[node name="LevelLoader" type="Node"]
+script = ExtResource("1_tehwp")

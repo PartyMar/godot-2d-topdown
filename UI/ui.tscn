@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr7dnwo0cksf"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_ke4kx"]
+[ext_resource type="FontFile" uid="uid://dwphoritv428g" path="res://Fonts/BarcadeBrawlRegular.ttf" id="2_7jb00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fae3q"]
+bg_color = Color(0.45098, 0.619608, 0.764706, 0.588235)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i5pne"]
+font = ExtResource("2_7jb00")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6iat"]
+font = ExtResource("2_7jb00")
+font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxta2"]
+bg_color = Color(0.388235, 0.490196, 0.572549, 0.588235)
+
+[sub_resource type="LabelSettings" id="LabelSettings_70fdx"]
+font = ExtResource("2_7jb00")
+font_size = 28
+
+[node name="UI" type="CanvasLayer"]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+script = ExtResource("1_ke4kx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 104.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fae3q")
+
+[node name="HP" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 3.0
+offset_right = 104.0
+offset_bottom = 40.5
+text = "HP 10/10"
+label_settings = SubResource("LabelSettings_i5pne")
+vertical_alignment = 1
+
+[node name="Keys" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.489
+anchor_right = 0.029
+anchor_bottom = 0.489
+offset_left = -0.016
+offset_top = -0.00500107
+offset_right = 100.984
+offset_bottom = 40.88
+grow_horizontal = 2
+grow_vertical = 2
+text = "КЛЮЧИ: 0"
+label_settings = SubResource("LabelSettings_g6iat")
+vertical_alignment = 1
+
+[node name="InteractPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 572.0
+offset_right = 872.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxta2")
+
+[node name="InteractMessage" type="Label" parent="Control/InteractPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = -4.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+label_settings = SubResource("LabelSettings_70fdx")
+horizontal_alignment = 1
+vertical_alignment = 1

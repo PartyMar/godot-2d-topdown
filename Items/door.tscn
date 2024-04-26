@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://chh0l8ctsjap0"]
+
+[ext_resource type="Texture2D" uid="uid://dju6s35hqlvwi" path="res://Art/Tilesets/Wooden House.png" id="1_uw0u1"]
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="2_jfpsp"]
+[ext_resource type="Script" path="res://Items/door.gd" id="2_x62oi"]
+[ext_resource type="PackedScene" uid="uid://ul8ytib8pewq" path="res://Game Components/interactable.tscn" id="4_dbi1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rbsy"]
+size = Vector2(12, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3g7r"]
+size = Vector2(16, 7.5)
+
+[node name="Door" type="Sprite2D"]
+position = Vector2(0, -5)
+texture = ExtResource("1_uw0u1")
+offset = Vector2(0, 5)
+hframes = 7
+vframes = 5
+frame = 10
+script = ExtResource("2_x62oi")
+
+[node name="Item" parent="." instance=ExtResource("2_jfpsp")]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_2rbsy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 14.25)
+shape = SubResource("RectangleShape2D_j3g7r")
+
+[node name="Interactable" parent="StaticBody2D" instance=ExtResource("4_dbi1q")]
+position = Vector2(0, 14)
+interact_label = "NEED TO FIND KEY"

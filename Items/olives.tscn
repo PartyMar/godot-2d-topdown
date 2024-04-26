@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv4hjox4h2470"]
+
+[ext_resource type="Texture2D" uid="uid://ceyawa6gdm63l" path="res://Art/Objects/fruits.png" id="1_cd6pt"]
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="2_4glk3"]
+[ext_resource type="Script" path="res://Items/olives.gd" id="2_lo22g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1i7j"]
+size = Vector2(500, 500)
+
+[node name="Olives" type="Sprite2D"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_cd6pt")
+offset = Vector2(0, 800)
+hframes = 3
+vframes = 3
+frame = 7
+script = ExtResource("2_lo22g")
+
+[node name="Item" parent="." instance=ExtResource("2_4glk3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(-100, 800)
+shape = SubResource("RectangleShape2D_b1i7j")

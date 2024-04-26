@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://iqgrf4cd3tb6"]
+
+[ext_resource type="Texture2D" uid="uid://ceyawa6gdm63l" path="res://Art/Objects/fruits.png" id="1_ty0nr"]
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="2_cur18"]
+[ext_resource type="Script" path="res://Items/key.gd" id="2_lil7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfxgv"]
+size = Vector2(600, 600)
+
+[node name="Key" type="Sprite2D"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_ty0nr")
+offset = Vector2(0, 800)
+hframes = 3
+vframes = 3
+frame = 1
+script = ExtResource("2_lil7a")
+
+[node name="Item" parent="." instance=ExtResource("2_cur18")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(0, 1100)
+shape = SubResource("RectangleShape2D_hfxgv")

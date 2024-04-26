@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyrenqn3r4lhx"]
+
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="1_jige2"]
+[ext_resource type="Script" path="res://Levels/Enters/exit_house_2.gd" id="1_sd0x0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ils5f"]
+
+[node name="ExitHouse2" type="Node2D"]
+script = ExtResource("1_sd0x0")
+
+[node name="Item" parent="." instance=ExtResource("1_jige2")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource("RectangleShape2D_ils5f")

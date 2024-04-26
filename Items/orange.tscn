@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://car01dvpt2fna"]
+
+[ext_resource type="Texture2D" uid="uid://ceyawa6gdm63l" path="res://Art/Objects/fruits.png" id="1_btiru"]
+[ext_resource type="Script" path="res://Items/orange.gd" id="2_f5l2g"]
+[ext_resource type="PackedScene" uid="uid://bxndaa5r1b2v5" path="res://Game Components/item.tscn" id="3_gf1i1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq76y"]
+size = Vector2(500, 400)
+
+[node name="Orange" type="Sprite2D"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_btiru")
+offset = Vector2(-125, 800)
+hframes = 3
+vframes = 3
+frame = 3
+script = ExtResource("2_f5l2g")
+
+[node name="Item" parent="." instance=ExtResource("3_gf1i1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(0, 1100)
+shape = SubResource("RectangleShape2D_hq76y")
